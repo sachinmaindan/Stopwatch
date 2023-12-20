@@ -1,7 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react';
+
 var timer = 0;
+
 function App() {
 
   const [start, setStart]= useState(false);
@@ -14,7 +15,7 @@ function App() {
     const date = new Date(0)
     date.setSeconds(sec)
     setTimerString(date.toISOString().slice(11,19))
-  })
+  },[sec])
 
   useEffect(()=>{
     // let timer= null
